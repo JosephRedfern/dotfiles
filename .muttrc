@@ -1,0 +1,39 @@
+#My .muttrc. I'll be honest, I've not become a full-time mutt user... 
+#This is based mainly on Lifehackers example muttrc file. 
+
+
+
+set imap_user = "joseph@redfern.me"
+set smtp_url = "smtp://joseph@redfern.me@smtp.gmail.com:587/"#Looks messy, but it works...
+set from = "joseph@redfern.me"
+set realname = "Joseph Redfern"
+
+set editor = "vim" #yay
+
+# Basic config, you can leave this as is
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set imap_check_subscribed
+set hostname = redfern.me #custom domain
+set mail_check = 120
+set timeout = 300
+set imap_keepalive = 300
+set postponed = "+[GMail]/Drafts"
+set record = "+[GMail]/Sent Mail"
+set header_cache=~/.mutt/cache/headers
+set message_cachedir=~/.mutt/cache/bodies
+set certificate_file=~/.mutt/certificates
+set move = no
+set include
+set sort = 'threads'
+set sort_aux = 'reverse-last-date-received'
+set auto_tag = yes
+ignore "Authentication-Results:"
+ignore "DomainKey-Signature:"
+ignore "DKIM-Signature:"
+hdr_order Date From To Cc
+alternative_order text/plain text/html *
+auto_view text/html
+bind editor <Tab> complete-query
+bind editor ^T complete
+bind editor <space> noop 
